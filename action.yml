@@ -1,0 +1,8 @@
+name: test action
+description: Automated test action.
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: chevron-up
+  color: blue

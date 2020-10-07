@@ -1,0 +1,14 @@
+name: "Bump Version"
+on:
+  push:
+    branches:
+      - "master"
+jobs:
+  bump-version:
+    name: "Bump Version on master"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "automation test1"
+        uses: "tykutest/automation-test@master"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

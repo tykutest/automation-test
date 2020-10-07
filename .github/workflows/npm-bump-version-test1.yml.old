@@ -1,0 +1,18 @@
+name: "Bump Version"
+on:
+  push:
+jobs:
+  bump-version:
+    name: "Bump Version on master"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2"
+      - name: "GitHub Version Bumper"
+        uses: "sravni/version-bumper@master"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_NAME: "Your Name"
+          GITHUB_EMAIL: "your_email@gmail.com"
+          VERSION_FILE_NAME: "./packages/test1/package.json",
+          VERSION_ENTRY: "version",
